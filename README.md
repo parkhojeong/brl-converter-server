@@ -9,4 +9,6 @@
 - python 3.8.10
 - pip 21.2.2
 - submodule Environment requirements 
-    - https://github.com/IlyaOvodov/AngelinaReader#installation
+    - in angerinaReader dir
+        - pip install -r requirements.txt 
+        - `wget -O weights/model.t7 http://angelina-reader.ovdv.ru/retina_chars_eced60.clr.008`
