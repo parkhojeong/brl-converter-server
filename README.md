@@ -2,8 +2,8 @@
 
 ### main action
 
-request:  `/convert` (method = `POST`, form data = img) 
-response: `brl plain text` that angerinaReader algorithm convert img
+- request:  `/convert` (method = `POST`, form data = img) 
+- response: `brl plain text` that angerinaReader algorithm convert img
 
 ### Environment requirements
 - python 3.8.10
