@@ -10,6 +10,10 @@ def index(request):
     try:
         file = request.FILES['file']
 
+        lang = 'EN'
+        if(request.POST.get('lang', False) and request.POST['lang'] in ['RU', 'EN', 'UZ', 'UZL', 'LV', 'GR']):
+            lang = request.POST['lang']
+
         if file.content_type not in ['image/png', 'image/jpeg', 'image/gif']:
             return HttpResponse('이미지 파일을 업로드 해주세요');
 
@@ -22,9 +26,10 @@ def index(request):
                 f.write(chunk)
 
         print("# image saved in" + inputFileDir)
+        print("# lang: " + lang)
 
         res = ConverterConfig.recognizer.run(img= inputFileDir,
-                                               lang='EN', 
+                                               lang=lang, 
                                                draw_refined=ConverterConfig.recognizer.DRAW_NONE,
                                                find_orientation=True,
                                                align_results=True,
