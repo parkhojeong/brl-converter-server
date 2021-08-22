@@ -1,22 +1,14 @@
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse, FileResponse
-from django.urls import reverse
+from django.http import HttpResponse 
 import os
-
-from django.views.generic import View
-from django.core.files import File
 from .apps import ConverterConfig
 
 @csrf_exempt 
 def index(request):
 
     try:
-        print(request)
         file = request.FILES['file']
-        print(type(request.FILES['file']))
 
         if file.content_type not in ['image/png', 'image/jpeg', 'image/gif']:
             return HttpResponse('이미지 파일을 업로드 해주세요');
@@ -29,11 +21,7 @@ def index(request):
             for chunk in file.chunks():
                 f.write(chunk)
 
-        
-        print("image saved")
-        # os.system('python AngelinaReader/run_local.py ')
-        print(ConverterConfig)
-
+        print("# image saved in" + inputFileDir)
 
         res = ConverterConfig.recognizer.run(img= inputFileDir,
                                                lang='EN', 
@@ -47,6 +35,6 @@ def index(request):
 
 
     except Exception as e:
-        print(Exception )
+        print(Exception)
         return HttpResponse('에러가 발생하였습니다')
 
