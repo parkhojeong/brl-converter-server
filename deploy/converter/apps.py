@@ -10,12 +10,11 @@ class ConverterConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'converter'
 
+    print("# [ConverterConfig] ")
+
     recognizer = infer_retinanet.BrailleInference(
                     params_fn=os.path.join(local_config.data_path, 'weights', 'param.txt'),
                     model_weights_fn=os.path.join(local_config.data_path, 'weights', model_weights),
                     create_script=None)
 
-    print(recognizer)
-
-    print("angelinaReader apps.py")
-    # return recognizer
+    print("# BrailleInference is initialized: ",recognizer)

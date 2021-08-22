@@ -181,6 +181,8 @@ class BrailleInference:
         if not torch.cuda.is_available() and device != 'cpu':
             print('CUDA not availabel. CPU is used')
             device = 'cpu'
+        else:
+            print("CUDA is available. GPU is used")
 
         params = AttrDict.load(params_fn, verbose=verbose)
         params.data.net_hw = (inference_width,inference_width,) #(512,768) ###### (1024,1536) #
