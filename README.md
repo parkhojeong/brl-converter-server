@@ -13,6 +13,7 @@
 - submodule Environment requirements 
     - `cd deploy/converter/angerinaReader` (in angerinaReader dir)
         - `wget -O weights/model.t7 http://angelina-reader.ovdv.ru/retina_chars_eced60.clr.008`
+- `python manage.py runserver` (development)
 
 ### deploy environment
 - ubuntu
