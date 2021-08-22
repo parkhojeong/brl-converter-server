@@ -17,3 +17,9 @@
 ### deploy environment
 - ubuntu
 - CUDA 10.2
+
+### ec2 deployment setup
+- web server
+  - https://github.com/parkhojeong/brl-converter-server/issues/11
+- WSGI
+  - https://github.com/parkhojeong/brl-converter-server/issues/13
