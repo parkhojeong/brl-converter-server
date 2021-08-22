@@ -9,9 +9,9 @@
 - python 3.8.10
 - pip 21.2.2
 - mac, ubuntu
+- `pip install -r requirements.txt`
 - submodule Environment requirements 
     - `cd deploy/converter/angerinaReader` (in angerinaReader dir)
-        - pip install -r requirements.txt 
         - `wget -O weights/model.t7 http://angelina-reader.ovdv.ru/retina_chars_eced60.clr.008`
 
 ### deploy environment
