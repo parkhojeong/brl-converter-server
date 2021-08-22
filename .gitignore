@@ -2,3 +2,6 @@ launch.json
 
 __pycache__
 model.t7
+
+# ignore saved input by request
+input/
