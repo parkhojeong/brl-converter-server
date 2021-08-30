@@ -17,7 +17,7 @@ def index(request):
         if file.content_type not in ['image/png', 'image/jpeg', 'image/gif']:
             return HttpResponse('이미지 파일을 업로드 해주세요');
 
-        inputFileName = "input" + os.path.splitext(str(file))[1]
+        inputFileName = "input." + file.content_type.split('/')[-1]
         pwd = os.path.dirname(__file__)
         inputFileDir = pwd + '/input/' + inputFileName
         
